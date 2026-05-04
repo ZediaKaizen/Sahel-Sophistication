@@ -1,0 +1,26 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "IvIIPowc2lLgQMnlmr6sK"
+uri = "file://artifacts/sahel-initiative/public/images/hero-water.png"
+type = "image"
+title = "Cinematic water droplet macro"
+
+[[generated]]
+id = "_SIssct5vXvCsJRt6YSzt"
+uri = "file://artifacts/sahel-initiative/public/images/project-drilling.png"
+type = "image"
+title = "Borehole drilling in Sahel"
+
+[[generated]]
+id = "F-opa54jcsZXDP4m4nBbm"
+uri = "file://artifacts/sahel-initiative/public/images/project-children.png"
+type = "image"
+title = "Children drinking clean water"
+
+[[generated]]
+id = "nvmeQn2Pm9sT6yT1mRhzc"
+uri = "file://artifacts/sahel-initiative/public/images/project-community.png"
+type = "image"
+title = "Women carrying water containers"
