@@ -110,70 +110,75 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
+      <section className="relative h-screen w-full overflow-hidden flex flex-col">
+        {/* Background image with parallax */}
         <motion.div 
           className="absolute inset-0 z-0"
-          style={{ y: heroY, opacity: heroOpacity }}
+          style={{ y: heroY }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background z-10" />
           <img 
-            src="/images/hero-water.png" 
-            alt="Water Droplet" 
-            className="w-full h-full object-cover scale-105"
+            src="/sahel-hero.png"
+            alt="Sahel landscape at sunset"
+            className="w-full h-full object-cover scale-110"
           />
+          {/* Gradient overlays: subtle top darkening for nav legibility, bottom for text */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-black/60" />
         </motion.div>
 
-        <div className="container relative z-10 mx-auto px-6 md:px-12 pt-20">
-          <motion.div 
+        {/* Content: vertically centered, filling the hero */}
+        <div className="relative z-10 flex flex-col flex-1 px-6 md:px-12 pt-28 pb-10 justify-between">
+          {/* Eyebrow */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="text-center"
+          >
+            <span className="text-primary text-xs md:text-sm font-semibold tracking-[0.25em] uppercase">
+              The Sahel Initiative
+            </span>
+          </motion.div>
+
+          {/* Main headline — fills the frame */}
+          <motion.div
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
-            className="max-w-4xl"
+            className="text-center flex-1 flex flex-col items-center justify-center"
           >
-            <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-8 border border-primary/20">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              100% Volunteer-Powered
-            </motion.div>
-            
-            <motion.h1 variants={fadeUp} className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[1.1] mb-8">
-              Water Changes <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Everything.</span>
+            <motion.h1
+              variants={fadeUp}
+              className="text-[clamp(3.5rem,13vw,10rem)] font-bold tracking-tight leading-[0.95] text-white mb-6"
+              style={{ fontWeight: 800 }}
+            >
+              Water<br />
+              changes<br />
+              everything.
             </motion.h1>
-            
-            <motion.p variants={fadeUp} className="text-xl md:text-2xl text-muted-foreground font-light max-w-2xl mb-12 leading-relaxed">
-              Improving quality of life for low-income communities in rural Nigeria — one borehole at a time.
+
+            <motion.p
+              variants={fadeUp}
+              className="text-lg md:text-2xl font-light text-white/70 tracking-wide"
+            >
+              One borehole at a time.
             </motion.p>
-            
-            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                onClick={() => scrollToSection('donate')}
-                size="lg" 
-                className="h-14 px-8 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground text-lg shadow-[0_0_30px_rgba(53,192,237,0.3)] hover:shadow-[0_0_40px_rgba(53,192,237,0.5)] transition-all duration-300"
-              >
-                Donate Now <Heart className="ml-2 w-5 h-5" />
-              </Button>
-              <Button 
-                onClick={() => scrollToSection('about')}
-                variant="outline" 
-                size="lg" 
-                className="h-14 px-8 rounded-full text-lg border-border/50 hover:bg-white/5 transition-all duration-300"
-              >
-                Learn More
-              </Button>
-            </motion.div>
+          </motion.div>
+
+          {/* Wide pill CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full max-w-lg mx-auto"
+          >
+            <button
+              onClick={() => scrollToSection('donate')}
+              className="w-full h-16 rounded-full bg-primary hover:bg-primary/90 active:scale-[0.98] text-white font-semibold text-lg tracking-wide shadow-[0_0_40px_rgba(53,192,237,0.45)] hover:shadow-[0_0_60px_rgba(53,192,237,0.6)] transition-all duration-300"
+            >
+              Donate a Little, Change a Lot
+            </button>
           </motion.div>
         </div>
-        
-        {/* Scroll indicator */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground text-sm z-10"
-        >
-          Scroll to explore
-          <div className="w-[1px] h-12 bg-gradient-to-b from-muted-foreground/50 to-transparent" />
-        </motion.div>
       </section>
 
       {/* Impact Stats */}
