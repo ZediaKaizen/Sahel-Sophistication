@@ -4,6 +4,8 @@
 
 [build.environment]
   NODE_VERSION = "24"
+  NODE_ENV = "production"
+  PNPM_VERSION = "10.26.1"
   BASE_PATH = "/"
 
 [[redirects]]
