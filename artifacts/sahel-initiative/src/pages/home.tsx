@@ -256,6 +256,74 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Latest from the Field */}
+      <section className="py-32 relative z-20 bg-background border-t border-white/5">
+        <div className="container mx-auto px-6 md:px-12">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeUp}
+            className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6"
+          >
+            <div>
+              <span className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4 block">From the Field</span>
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Latest Stories</h2>
+            </div>
+            <Link href="/blog">
+              <div className="inline-flex items-center gap-2 font-medium text-muted-foreground hover:text-foreground transition-colors group">
+                View all posts <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </Link>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                title: "Community Profile: KUYA Community, Kaduna State",
+                date: "April 14, 2025",
+                excerpt: "A closer look at the KUYA community in Kaduna State — the people, the land, and why reliable water access is the single biggest barrier to a better life here.",
+                image: "/blog-kuya.jpg"
+              },
+              {
+                title: "The Flagship Project",
+                date: "March 3, 2025",
+                excerpt: "From the first survey to the final pump test — an inside account of how The Sahel Initiative drilled its landmark borehole and what it means for the hundreds of families it now serves.",
+                image: "/blog-flagship.jpg"
+              }
+            ].map((post, i) => (
+              <motion.div
+                key={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] } }
+                }}
+                className="group flex flex-col rounded-2xl overflow-hidden bg-zinc-900 border border-white/5 hover:border-white/10 transition-colors"
+              >
+                <div className="aspect-video relative overflow-hidden">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                </div>
+                <div className="p-8 flex flex-col flex-1">
+                  <span className="text-primary text-sm font-medium mb-3">{post.date}</span>
+                  <h3 className="text-2xl font-bold mb-4 leading-tight group-hover:text-primary transition-colors">{post.title}</h3>
+                  <p className="text-muted-foreground font-light mb-8 flex-1">{post.excerpt}</p>
+                  <Link href="/blog" className="inline-flex items-center text-sm font-semibold tracking-wide uppercase text-white hover:text-primary transition-colors w-fit">
+                    Read More &rarr;
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Strip */}
       <section className="py-24 relative z-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-6 md:px-12 text-center">
