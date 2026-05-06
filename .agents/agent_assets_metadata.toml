@@ -30,3 +30,45 @@ id = "10w63If3MhHKzYHDzNHX6"
 uri = "file://attached_assets/generated_images/generated_image.png"
 type = "image"
 title = "generated_image"
+
+[[generated]]
+id = "nhXR1VhZ0gBx_2-tQyiVr"
+uri = "file://artifacts/sahel-initiative/public/images/project-sanitation.png"
+type = "image"
+title = "Community sanitation project in Africa"
+
+[[generated]]
+id = "TA0_yTljyl-hNlMSSHOWI"
+uri = "file://artifacts/sahel-initiative/public/images/project-irrigation.png"
+type = "image"
+title = "Agricultural irrigation system"
+
+[[generated]]
+id = "jpGVTZfGRpxo-05A6kTtY"
+uri = "file://artifacts/sahel-initiative/public/images/project-purification.png"
+type = "image"
+title = "Water purification system"
+
+[[generated]]
+id = "aoUWlbIHVDpvKzwJP7u9p"
+uri = "file://artifacts/sahel-initiative/public/images/blog-1.png"
+type = "image"
+title = "Blog cover water drops"
+
+[[generated]]
+id = "0UnoDYPksKQ62v37UidB6"
+uri = "file://artifacts/sahel-initiative/public/images/blog-2.png"
+type = "image"
+title = "Blog cover children studying"
+
+[[generated]]
+id = "5MEiQ_IQw58Od4JeAZWi2"
+uri = "file://artifacts/sahel-initiative/public/images/blog-3.png"
+type = "image"
+title = "Blog cover community meeting"
+
+[[generated]]
+id = "iOE0Gp0O2fv28wIvAarmf"
+uri = "file://artifacts/sahel-initiative/public/images/blog-4.png"
+type = "image"
+title = "Blog cover drilling rig"

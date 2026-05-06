@@ -25,3 +25,28 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - `pnpm --filter @workspace/api-server run dev` — run API server locally
 
 See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details.
+
+## The Sahel Initiative (`artifacts/sahel-initiative`)
+
+React 19 + Vite + Tailwind CSS v4 + Framer Motion multi-page website.
+
+### Pages & Routes
+- `/` — Home: cinematic hero, impact stats, mission teaser, projects preview, testimonial, CTA
+- `/about` — About: full mission, Why Water, How It Works, volunteer callout
+- `/our-projects` — Projects: full grid of 6 projects with AI-generated imagery
+- `/blog` — Blog: 6 hardcoded post cards with AI-generated cover images
+- `/support-us` — Support Us: interactive donation widget (amount picker + custom input)
+- `/contact` — Contact: contact form + contact info
+
+### Shared components
+- `src/components/Navbar.tsx` — sticky frosted-glass nav with real logo + wouter Links + mobile hamburger
+- `src/components/Footer.tsx` — full-width footer with logo + links + contact info
+- `src/lib/animations.tsx` — shared Framer Motion variants (`fadeUp`, `staggerContainer`) + `CountUp`
+
+### Logo files (in `public/`)
+- `/logo-light.png` — white text + coloured drops — use on dark backgrounds (nav, footer)
+- `/logo-dark.png` — dark text + coloured drops — use on light/white backgrounds
+
+### Routing
+- Uses `wouter` — `<Link>` for all internal nav, `<Switch>`/`<Route>` in App.tsx
+- `ScrollToTop` component in App.tsx resets scroll position on route change
