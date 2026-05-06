@@ -6,23 +6,32 @@ import { Link } from "wouter";
 
 const projects = [
   {
+    slug: "kiru-medile-tiga",
     title: "Kiru, Medile, and Tiga Water Projects",
     location: "Kano State, Nigeria",
     status: "Completed",
-    image: "/project-kiru.jpg"
+    year: "2023",
+    excerpt: "Three communities — over 1,200 people — gained clean water through a single coordinated borehole and tap-stand network.",
+    image: "/project-kiru.jpg",
   },
   {
+    slug: "jirgabawa",
     title: "Jirgabawa Solar-Powered Borehole",
     location: "Kano State, Nigeria",
     status: "Completed",
-    image: "/project-jirgabawa.png"
+    year: "2023",
+    excerpt: "A solar-driven pump and overhead tank deliver free, clean water to 600+ residents with zero fuel costs and zero grid dependency.",
+    image: "/project-jirgabawa.png",
   },
   {
+    slug: "kawo-mariri",
     title: "Kawo/Mariri Project",
     location: "Kano State, Nigeria",
     status: "Completed",
-    image: "/project-kawo.jpg"
-  }
+    year: "2024",
+    excerpt: "A 65-metre borehole paired with six community hand-washing stations — our first project to combine water access with hygiene infrastructure.",
+    image: "/project-kawo.jpg",
+  },
 ];
 
 export default function OurProjects() {
@@ -84,29 +93,43 @@ export default function OurProjects() {
                 viewport={{ once: true, margin: "-50px" }}
                 variants={{
                   hidden: { opacity: 0, y: 30 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: (i % 3) * 0.15, ease: [0.16, 1, 0.3, 1] } }
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: (i % 3) * 0.15, ease: [0.16, 1, 0.3, 1] } },
                 }}
-                className="group relative rounded-3xl overflow-hidden bg-card border border-card-border"
+                className="group relative rounded-3xl overflow-hidden bg-card border border-card-border flex flex-col"
               >
-                <div className="aspect-[4/3] relative overflow-hidden">
+                {/* Image */}
+                <div className="aspect-[4/3] relative overflow-hidden shrink-0">
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
                   <img
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  <div className="absolute top-5 left-5 z-20">
+                  <div className="absolute top-5 left-5 z-20 flex gap-2">
                     <span className="px-3 py-1 rounded-full text-xs font-medium backdrop-blur-md bg-primary/20 text-white border border-primary/30">
                       {project.status}
                     </span>
+                    <span className="px-3 py-1 rounded-full text-xs font-medium backdrop-blur-md bg-white/15 text-white border border-white/20">
+                      {project.year}
+                    </span>
                   </div>
                 </div>
-                <div className="p-6 absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/85 to-transparent z-20">
-                  <h3 className="text-xl font-bold text-white mb-1 leading-snug">{project.title}</h3>
-                  <p className="text-white/60 text-sm font-light flex items-center gap-2">
+
+                {/* Content */}
+                <div className="p-6 flex flex-col flex-1">
+                  <h3 className="text-xl font-bold text-white mb-2 leading-snug">{project.title}</h3>
+                  <p className="text-white/50 text-sm font-light flex items-center gap-2 mb-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
                     {project.location}
                   </p>
+                  <p className="text-white/60 text-sm font-light leading-relaxed flex-1">{project.excerpt}</p>
+                  <Link
+                    href={`/our-projects/${project.slug}`}
+                    className="mt-5 inline-flex items-center gap-2 text-primary text-sm font-medium hover:gap-3 transition-all duration-200 group/link"
+                  >
+                    View project
+                    <span className="text-lg leading-none group-hover/link:translate-x-1 transition-transform duration-200">→</span>
+                  </Link>
                 </div>
               </motion.div>
             ))}
