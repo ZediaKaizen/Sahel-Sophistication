@@ -165,22 +165,22 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "Borehole Drilling",
+                title: "Kiru, Medile, and Tiga Water Projects",
                 location: "Kano State, Nigeria",
                 status: "Completed",
-                image: "/images/project-drilling.png"
+                image: "/project-kiru.jpg"
               },
               {
-                title: "School Water Tap",
-                location: "Jigawa State, Nigeria",
+                title: "Jirgabawa Solar-Powered Borehole",
+                location: "Kano State, Nigeria",
                 status: "Completed",
-                image: "/images/project-children.png"
+                image: "/project-jirgabawa.png"
               },
               {
-                title: "Community Reservoir",
-                location: "Yobe State, Nigeria",
-                status: "In Progress",
-                image: "/images/project-community.png"
+                title: "Kawo/Mariri Project",
+                location: "Kano State, Nigeria",
+                status: "Completed",
+                image: "/project-kawo.jpg"
               }
             ].map((project, i) => (
               <motion.div
