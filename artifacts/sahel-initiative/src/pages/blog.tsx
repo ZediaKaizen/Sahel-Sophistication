@@ -7,28 +7,34 @@ import { Link } from "wouter";
 export default function Blog() {
   const posts = [
     {
-      title: "How Access to Water Changes Education Outcomes",
+      title: "Community Profile: KUYA Community, Kaduna State",
+      date: "April 14, 2025",
+      excerpt: "A closer look at the KUYA community in Kaduna State — the people, the land, and why reliable water access is the single biggest barrier to a better life here.",
+      image: "/blog-kuya.jpg"
+    },
+    {
+      title: "The Flagship Project",
+      date: "March 3, 2025",
+      excerpt: "From the first survey to the final pump test — an inside account of how The Sahel Initiative drilled its landmark borehole and what it means for the hundreds of families it now serves.",
+      image: "/blog-flagship.jpg"
+    },
+    {
+      title: "The Impact of Clean Water on Child Health in the Sahel",
       date: "October 12, 2023",
-      excerpt: "When children don't have to walk miles for water, they can spend that time in the classroom.",
+      excerpt: "When children don't have to walk miles for water, they can spend that time in the classroom — and their bodies stay healthier too.",
       image: "/images/blog-2.png"
     },
     {
-      title: "The Community Drilling Initiative in Kano",
+      title: "Water Crisis in the Sahel Region of Nigeria: The Intersection of Insecurities and COVID-19",
       date: "September 28, 2023",
-      excerpt: "A look inside our recent successful borehole project that brought water to 500+ residents.",
+      excerpt: "The pandemic laid bare a crisis that was already unfolding. A look at how water scarcity and instability compound one another across Nigeria's Sahel belt.",
       image: "/images/blog-4.png"
     },
     {
-      title: "Why Sustainability is Key to Our Mission",
+      title: "The Water Crisis in the Sahel Region: A Growing Problem",
       date: "September 15, 2023",
-      excerpt: "Building a well is only step one. Ensuring it lasts for decades requires deep community involvement.",
+      excerpt: "Rising temperatures, shifting rainfall, and rapid population growth are pushing millions of people further from a safe water source every year.",
       image: "/images/blog-3.png"
-    },
-    {
-      title: "Water: The Foundation of Health and Hygiene",
-      date: "August 30, 2023",
-      excerpt: "Clean water fundamentally transforms the health outcomes of an entire village.",
-      image: "/images/blog-1.png"
     }
   ];
 
