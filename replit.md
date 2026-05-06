@@ -32,7 +32,8 @@ React 19 + Vite + Tailwind CSS v4 + Framer Motion multi-page website.
 
 ### Pages & Routes
 - `/` — Home: cinematic hero, impact stats, mission teaser, projects preview, testimonial, CTA
-- `/about` — About: full mission, Why Water, How It Works, volunteer callout
+- `/about` — About: full mission, Why Water, How It Works, volunteer callout + "Meet the Team" CTA
+- `/team` — Team: Board Members grid (6 trustees) with real photos, illustrated avatars, bios, and join CTA
 - `/our-projects` — Projects: grid of 3 real projects with photos, excerpts + "View project" links
 - `/our-projects/:slug` — Project detail: hero, stats strip, long-form body, photo gallery, lightbox, CTA
   - Slugs: `kiru-medile-tiga`, `jirgabawa`, `kawo-mariri`

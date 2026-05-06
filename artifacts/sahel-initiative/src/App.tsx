@@ -8,6 +8,7 @@ import Home from "@/pages/home";
 import About from "@/pages/about";
 import OurProjects from "@/pages/our-projects";
 import ProjectDetail from "@/pages/project-detail";
+import Team from "@/pages/team";
 import Blog from "@/pages/blog";
 import SupportUs from "@/pages/support-us";
 import Contact from "@/pages/contact";
@@ -27,6 +28,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
+      <Route path="/team" component={Team} />
       <Route path="/our-projects" component={OurProjects} />
       <Route path="/our-projects/:slug" component={ProjectDetail} />
       <Route path="/blog" component={Blog} />

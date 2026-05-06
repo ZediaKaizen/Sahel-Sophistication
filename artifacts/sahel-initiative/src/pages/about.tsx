@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { Link } from "wouter";
 
 export default function About() {
   return (
@@ -105,13 +106,20 @@ export default function About() {
             <motion.p variants={fadeUp} className="text-xl text-muted-foreground font-light mb-10">
               We are 100% volunteer-powered. Whether you want to fundraise, spread awareness, or lend your skills, there is a place for you here.
             </motion.p>
-            <motion.a 
-              variants={fadeUp} 
-              href="mailto:volunteer@thesahelinitiative.org"
-              className="inline-flex h-14 items-center justify-center rounded-full bg-primary px-8 text-lg font-semibold text-primary-foreground shadow-[0_0_20px_rgba(53,192,237,0.3)] hover:shadow-[0_0_30px_rgba(53,192,237,0.5)] transition-all duration-300"
-            >
-              Become a Volunteer
-            </motion.a>
+            <motion.div variants={fadeUp} className="flex flex-wrap items-center justify-center gap-4">
+              <a 
+                href="mailto:volunteer@thesahelinitiative.org"
+                className="inline-flex h-14 items-center justify-center rounded-full bg-primary px-8 text-lg font-semibold text-primary-foreground shadow-[0_0_20px_rgba(53,192,237,0.3)] hover:shadow-[0_0_30px_rgba(53,192,237,0.5)] transition-all duration-300"
+              >
+                Become a Volunteer
+              </a>
+              <Link
+                href="/team"
+                className="inline-flex h-14 items-center justify-center rounded-full border border-white/20 text-white px-8 text-lg font-semibold hover:bg-white/8 transition-all duration-300"
+              >
+                Meet the Team
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </section>
