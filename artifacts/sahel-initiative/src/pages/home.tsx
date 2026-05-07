@@ -76,12 +76,14 @@ export default function Home() {
             transition={{ duration: 0.9, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="w-full max-w-lg mx-auto"
           >
-            <Link
-              href="/support-us"
+            <a
+              href="https://paypal.me/thesahelinitiative?country.x=GB&locale.x=en_GB"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full h-16 rounded-full bg-primary hover:bg-primary/90 active:scale-[0.98] flex items-center justify-center text-white font-semibold text-lg tracking-wide shadow-[0_0_40px_rgba(53,192,237,0.45)] hover:shadow-[0_0_60px_rgba(53,192,237,0.6)] transition-all duration-300"
             >
               Donate a Little, Change a Lot
-            </Link>
+            </a>
           </motion.div>
         </div>
       </section>
@@ -321,12 +323,14 @@ export default function Home() {
               Ready to make an impact?
             </motion.h2>
             <motion.div variants={fadeUp}>
-              <Link
-                href="/support-us"
+              <a
+                href="https://paypal.me/thesahelinitiative?country.x=GB&locale.x=en_GB"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex h-14 items-center justify-center rounded-full bg-white text-primary px-8 text-lg font-bold hover:scale-105 transition-transform"
               >
                 Donate Now
-              </Link>
+              </a>
             </motion.div>
           </motion.div>
         </div>

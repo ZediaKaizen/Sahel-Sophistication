@@ -318,12 +318,14 @@ export default function ProjectDetail() {
               Every donation — no matter the size — goes directly towards drilling the next borehole and bringing clean water to another community in need.
             </motion.p>
             <motion.div variants={fadeUp} className="flex flex-wrap items-center justify-center gap-4">
-              <Link
-                href="/support-us"
+              <a
+                href="https://paypal.me/thesahelinitiative?country.x=GB&locale.x=en_GB"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex h-13 items-center justify-center rounded-full bg-primary text-white px-8 py-3.5 text-base font-semibold hover:bg-primary/90 shadow-[0_0_30px_rgba(53,192,237,0.4)] transition-all duration-300"
               >
                 Donate now
-              </Link>
+              </a>
               <Link
                 href="/our-projects"
                 className="inline-flex h-13 items-center justify-center rounded-full border border-white/30 text-white px-8 py-3.5 text-base font-semibold hover:bg-white/10 transition-all duration-300"

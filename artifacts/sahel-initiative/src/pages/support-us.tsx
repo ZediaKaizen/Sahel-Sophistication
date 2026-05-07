@@ -118,13 +118,20 @@ export default function SupportUs() {
                     </p>
                   </div>
 
-                  <Button className="w-full h-14 rounded-2xl text-lg font-bold bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 group">
-                    <Heart className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                    Donate Now
-                  </Button>
+                  <a
+                    href="https://paypal.me/thesahelinitiative?country.x=GB&locale.x=en_GB"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full"
+                  >
+                    <Button className="w-full h-14 rounded-2xl text-lg font-bold bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 group">
+                      <Heart className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                      Donate Now via PayPal
+                    </Button>
+                  </a>
 
                   <p className="text-center text-muted-foreground text-xs mt-4">
-                    Secure payment processed via Stripe.
+                    Secure payment processed via PayPal.
                   </p>
                 </CardContent>
               </Card>

@@ -68,11 +68,15 @@ export function Navbar() {
               <Moon className="w-4 h-4" />
             )}
           </button>
-          <Link href="/support-us">
+          <a
+            href="https://paypal.me/thesahelinitiative?country.x=GB&locale.x=en_GB"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6 shadow-[0_0_20px_rgba(53,192,237,0.3)] hover:shadow-[0_0_30px_rgba(53,192,237,0.5)] transition-all duration-300">
               Donate
             </Button>
-          </Link>
+          </a>
         </div>
 
         <div className="md:hidden flex items-center gap-2">
@@ -108,11 +112,16 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link href="/support-us" onClick={() => setMobileMenuOpen(false)}>
+          <a
+            href="https://paypal.me/thesahelinitiative?country.x=GB&locale.x=en_GB"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMobileMenuOpen(false)}
+          >
             <Button className="w-full mt-4 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-6 text-lg">
               Donate
             </Button>
-          </Link>
+          </a>
         </div>
       )}
     </nav>
