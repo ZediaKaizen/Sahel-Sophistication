@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Instagram, Linkedin, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { Instagram, Linkedin, CheckCircle } from "lucide-react";
 
 const DIAL_CODES = [
   { code: "+234", country: "NG", flag: "🇳🇬" },
@@ -26,7 +26,7 @@ const DIAL_CODES = [
   { code: "+55",  country: "BR", flag: "🇧🇷" },
 ];
 
-type Status = "idle" | "loading" | "success" | "error";
+type Status = "idle" | "success";
 
 export default function Contact() {
   const [dialCode, setDialCode] = useState("+234");
@@ -38,41 +38,27 @@ export default function Contact() {
     message: "",
   });
   const [status, setStatus] = useState<Status>("idle");
-  const [errorMessage, setErrorMessage] = useState("");
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  async function handleSubmit(e: React.FormEvent) {
+  function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setStatus("loading");
-    setErrorMessage("");
 
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          firstName: form.firstName,
-          lastName: form.lastName,
-          phone: dialCode + form.phone,
-          email: form.email,
-          message: form.message,
-        }),
-      });
+    const fullName = `${form.firstName} ${form.lastName}`.trim();
+    const fullPhone = dialCode + form.phone;
 
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data?.error ?? "Something went wrong. Please try again.");
-      }
+    const subject = encodeURIComponent(`New message from ${fullName}`);
+    const body = encodeURIComponent(
+      `Name: ${fullName}\nPhone: ${fullPhone}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
+    );
 
-      setStatus("success");
-      setForm({ firstName: "", lastName: "", phone: "", email: "", message: "" });
-    } catch (err: unknown) {
-      setStatus("error");
-      setErrorMessage(err instanceof Error ? err.message : "Something went wrong.");
-    }
+    const mailtoUrl = `mailto:support@thesahelinitiative.org?subject=${subject}&body=${body}`;
+    window.open(mailtoUrl, "_blank");
+
+    setStatus("success");
+    setForm({ firstName: "", lastName: "", phone: "", email: "", message: "" });
   }
 
   return (
@@ -169,9 +155,9 @@ export default function Contact() {
               {status === "success" ? (
                 <div className="flex flex-col items-center justify-center h-full gap-4 py-12 text-center">
                   <CheckCircle className="w-14 h-14 text-primary" />
-                  <h3 className="text-xl font-bold">Message sent!</h3>
+                  <h3 className="text-xl font-bold">Your email client is ready!</h3>
                   <p className="text-muted-foreground font-light">
-                    Thank you for reaching out. We'll get back to you as soon as possible.
+                    Your message has been pre-filled in your email app — just hit Send to reach us at support@thesahelinitiative.org.
                   </p>
                   <button
                     onClick={() => setStatus("idle")}
@@ -268,27 +254,11 @@ export default function Contact() {
                     />
                   </div>
 
-                  {/* Error banner */}
-                  {status === "error" && (
-                    <div className="flex items-start gap-2 rounded-xl bg-destructive/10 border border-destructive/20 text-destructive px-4 py-3 text-sm">
-                      <AlertCircle className="w-4 h-4 mt-0.5 shrink-0" />
-                      <span>{errorMessage}</span>
-                    </div>
-                  )}
-
                   <Button
                     type="submit"
-                    disabled={status === "loading"}
                     className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-12 rounded-xl"
                   >
-                    {status === "loading" ? (
-                      <span className="flex items-center gap-2">
-                        <Loader2 className="w-4 h-4 animate-spin" />
-                        Sending…
-                      </span>
-                    ) : (
-                      "Send Message"
-                    )}
+                    Send Message
                   </Button>
                 </form>
               )}
