@@ -15,16 +15,21 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative h-screen w-full overflow-hidden flex flex-col">
-        {/* Background image with parallax */}
-        <motion.div 
+        {/* Background video with parallax */}
+        <motion.div
           className="absolute inset-0 z-0"
           style={{ y: heroY }}
         >
-          <img 
-            src="/sahel-hero.png"
-            alt="Sahel landscape at sunset"
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster="/hero-poster.jpg"
             className="w-full h-full object-cover scale-110"
-          />
+          >
+            <source src="/hero-video.mp4" type="video/mp4" />
+          </video>
           {/* Gradient overlays: subtle top darkening for nav legibility, bottom for text */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-black/60" />
         </motion.div>
