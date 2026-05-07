@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 export default function Contact() {
   return (
-    <div className="dark min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Navbar />
 
       <section className="relative pt-40 pb-20 overflow-hidden">
@@ -32,7 +32,7 @@ export default function Contact() {
       <section className="py-20 relative z-20 bg-background">
         <div className="container mx-auto px-6 md:px-12">
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-16">
-            
+
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -66,19 +66,19 @@ export default function Contact() {
               <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                 <div>
                   <label className="block text-sm font-medium mb-2">Name</label>
-                  <Input placeholder="Your Name" className="bg-white/5 border-white/10" />
+                  <Input placeholder="Your Name" className="bg-muted border-border" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2">Email</label>
-                  <Input type="email" placeholder="you@example.com" className="bg-white/5 border-white/10" />
+                  <Input type="email" placeholder="you@example.com" className="bg-muted border-border" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2">Subject</label>
-                  <Input placeholder="How can we help?" className="bg-white/5 border-white/10" />
+                  <Input placeholder="How can we help?" className="bg-muted border-border" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2">Message</label>
-                  <Textarea rows={5} placeholder="Your message..." className="bg-white/5 border-white/10 resize-none" />
+                  <Textarea rows={5} placeholder="Your message..." className="bg-muted border-border resize-none" />
                 </div>
                 <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-12 rounded-xl">
                   Send Message

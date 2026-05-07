@@ -6,7 +6,7 @@ import { Link } from "wouter";
 
 export default function About() {
   return (
-    <div className="dark min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Navbar />
 
       {/* Hero section */}
@@ -29,9 +29,9 @@ export default function About() {
       </section>
 
       {/* Why Water? */}
-      <section className="py-24 relative z-20 bg-zinc-950/50 border-y border-white/5">
+      <section className="py-24 relative z-20 bg-muted/40 border-y border-border/20">
         <div className="container mx-auto px-6 md:px-12 max-w-5xl">
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
@@ -42,7 +42,7 @@ export default function About() {
               Why Water? <br/>
               <span className="text-muted-foreground font-light">Because it is the foundation of everything.</span>
             </motion.h2>
-            
+
             <motion.div variants={fadeUp} className="text-xl md:text-2xl text-muted-foreground/90 font-light leading-relaxed space-y-8 text-left md:text-center">
               <p>
                 Access to safe water keeps children in school, empowers women, improves health, and unlocks economic opportunity. Without it, survival is a daily struggle.
@@ -58,7 +58,7 @@ export default function About() {
       {/* How it Works */}
       <section className="py-32 relative z-20 bg-background">
         <div className="container mx-auto px-6 md:px-12">
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
@@ -68,7 +68,7 @@ export default function About() {
             <motion.h2 variants={fadeUp} className="text-3xl md:text-5xl font-bold tracking-tight mb-16 text-center">
               How It Works
             </motion.h2>
-            
+
             <div className="space-y-12">
               {[
                 { step: "01", title: "Identify", desc: "We identify rural communities with severe water scarcity and partner with local leaders." },
@@ -93,7 +93,7 @@ export default function About() {
       {/* Volunteer Callout */}
       <section className="py-24 relative z-20 bg-primary/5 border-t border-primary/10">
         <div className="container mx-auto px-6 md:px-12 text-center">
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
@@ -107,7 +107,7 @@ export default function About() {
               We are 100% volunteer-powered. Whether you want to fundraise, spread awareness, or lend your skills, there is a place for you here.
             </motion.p>
             <motion.div variants={fadeUp} className="flex flex-wrap items-center justify-center gap-4">
-              <a 
+              <a
                 href="mailto:volunteer@thesahelinitiative.org"
                 className="inline-flex h-14 items-center justify-center rounded-full bg-primary px-8 text-lg font-semibold text-primary-foreground shadow-[0_0_20px_rgba(53,192,237,0.3)] hover:shadow-[0_0_30px_rgba(53,192,237,0.5)] transition-all duration-300"
               >
@@ -115,7 +115,7 @@ export default function About() {
               </a>
               <Link
                 href="/team"
-                className="inline-flex h-14 items-center justify-center rounded-full border border-white/20 text-white px-8 text-lg font-semibold hover:bg-white/8 transition-all duration-300"
+                className="inline-flex h-14 items-center justify-center rounded-full border border-border text-foreground px-8 text-lg font-semibold hover:bg-foreground/5 transition-all duration-300"
               >
                 Meet the Team
               </Link>

@@ -39,7 +39,7 @@ export default function Blog() {
   ];
 
   return (
-    <div className="dark min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Navbar />
 
       <section className="relative pt-40 pb-20 overflow-hidden">
@@ -73,11 +73,11 @@ export default function Blog() {
                   hidden: { opacity: 0, y: 30 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: (i % 2) * 0.2, ease: [0.16, 1, 0.3, 1] } }
                 }}
-                className="group flex flex-col rounded-2xl overflow-hidden bg-zinc-900 border border-white/5 hover:border-white/10 transition-colors"
+                className="group flex flex-col rounded-2xl overflow-hidden bg-card border border-border hover:border-border/80 transition-colors"
               >
                 <div className="aspect-video relative overflow-hidden">
-                  <img 
-                    src={post.image} 
+                  <img
+                    src={post.image}
                     alt={post.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
@@ -88,7 +88,7 @@ export default function Blog() {
                   <p className="text-muted-foreground font-light mb-8 flex-1">
                     {post.excerpt}
                   </p>
-                  <Link href={`/blog/${i}`} className="inline-flex items-center text-sm font-semibold tracking-wide uppercase text-white hover:text-primary transition-colors w-fit">
+                  <Link href={`/blog/${i}`} className="inline-flex items-center text-sm font-semibold tracking-wide uppercase text-foreground hover:text-primary transition-colors w-fit">
                     Read More &rarr;
                   </Link>
                 </div>

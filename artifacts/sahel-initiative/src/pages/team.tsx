@@ -86,7 +86,7 @@ function Avatar({ member }: { member: Member }) {
 
 export default function Team() {
   return (
-    <div className="dark min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Navbar />
 
       {/* Hero */}
@@ -146,23 +146,23 @@ export default function Team() {
                     transition: { duration: 0.8, delay: (i % 3) * 0.12, ease: [0.16, 1, 0.3, 1] },
                   },
                 }}
-                className="group flex flex-col rounded-3xl overflow-hidden bg-zinc-900/60 border border-white/8 hover:border-primary/30 transition-colors duration-300"
+                className="group flex flex-col rounded-3xl overflow-hidden bg-card border border-border hover:border-primary/30 transition-colors duration-300"
               >
                 {/* Photo */}
-                <div className="aspect-square relative overflow-hidden bg-zinc-800">
+                <div className="aspect-square relative overflow-hidden bg-muted">
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500 z-10" />
                   <Avatar member={member} />
                 </div>
 
                 {/* Info */}
                 <div className="p-6 flex flex-col flex-1">
-                  <h3 className="text-lg font-bold text-white leading-snug mb-1">
+                  <h3 className="text-lg font-bold text-foreground leading-snug mb-1">
                     {member.name}
                   </h3>
                   <p className="text-primary text-xs font-medium uppercase tracking-wider mb-4">
                     {member.title}
                   </p>
-                  <p className="text-white/55 text-sm font-light leading-relaxed flex-1">
+                  <p className="text-muted-foreground text-sm font-light leading-relaxed flex-1">
                     {member.bio}
                   </p>
                 </div>
@@ -173,7 +173,7 @@ export default function Team() {
       </section>
 
       {/* Join CTA */}
-      <section className="py-24 bg-zinc-950/60 border-t border-white/5">
+      <section className="py-24 bg-muted/40 border-t border-border/20">
         <div className="container mx-auto px-6 md:px-12 text-center">
           <motion.div
             initial="hidden"
@@ -191,13 +191,13 @@ export default function Team() {
             <motion.div variants={fadeUp} className="flex flex-wrap items-center justify-center gap-4">
               <a
                 href="mailto:volunteer@thesahelinitiative.org"
-                className="inline-flex h-13 items-center justify-center rounded-full bg-primary text-white px-8 py-3.5 text-base font-semibold hover:bg-primary/90 shadow-[0_0_30px_rgba(53,192,237,0.3)] hover:shadow-[0_0_40px_rgba(53,192,237,0.5)] transition-all duration-300"
+                className="inline-flex h-13 items-center justify-center rounded-full bg-primary text-primary-foreground px-8 py-3.5 text-base font-semibold hover:bg-primary/90 shadow-[0_0_30px_rgba(53,192,237,0.3)] hover:shadow-[0_0_40px_rgba(53,192,237,0.5)] transition-all duration-300"
               >
                 Become a Volunteer
               </a>
               <Link
                 href="/about"
-                className="inline-flex h-13 items-center justify-center rounded-full border border-white/20 text-white px-8 py-3.5 text-base font-semibold hover:bg-white/8 transition-all duration-300"
+                className="inline-flex h-13 items-center justify-center rounded-full border border-border text-foreground px-8 py-3.5 text-base font-semibold hover:bg-foreground/5 transition-all duration-300"
               >
                 Our Mission
               </Link>

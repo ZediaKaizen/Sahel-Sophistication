@@ -36,10 +36,10 @@ const projects = [
 
 export default function OurProjects() {
   return (
-    <div className="dark min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Navbar />
 
-      {/* Hero Banner */}
+      {/* Hero Banner — photo bg, text always white over overlay */}
       <section className="relative h-[420px] overflow-hidden flex items-end">
         <div className="absolute inset-0 z-0">
           <img
@@ -62,7 +62,7 @@ export default function OurProjects() {
       </section>
 
       {/* Intro Copy */}
-      <section className="py-20 bg-zinc-950/60">
+      <section className="py-20 bg-muted/40">
         <div className="container mx-auto px-6 md:px-12 max-w-3xl">
           <motion.div
             initial="hidden"
@@ -117,12 +117,12 @@ export default function OurProjects() {
 
                 {/* Content */}
                 <div className="p-6 flex flex-col flex-1">
-                  <h3 className="text-xl font-bold text-white mb-2 leading-snug">{project.title}</h3>
-                  <p className="text-white/50 text-sm font-light flex items-center gap-2 mb-3">
+                  <h3 className="text-xl font-bold text-foreground mb-2 leading-snug">{project.title}</h3>
+                  <p className="text-muted-foreground text-sm font-light flex items-center gap-2 mb-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
                     {project.location}
                   </p>
-                  <p className="text-white/60 text-sm font-light leading-relaxed flex-1">{project.excerpt}</p>
+                  <p className="text-muted-foreground text-sm font-light leading-relaxed flex-1">{project.excerpt}</p>
                   <Link
                     href={`/our-projects/${project.slug}`}
                     className="mt-5 inline-flex items-center gap-2 text-primary text-sm font-medium hover:gap-3 transition-all duration-200 group/link"
@@ -137,7 +137,7 @@ export default function OurProjects() {
         </div>
       </section>
 
-      {/* CTA Banner */}
+      {/* CTA Banner — photo bg, text always white */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img

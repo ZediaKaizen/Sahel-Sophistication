@@ -153,7 +153,7 @@ export default function ProjectDetail() {
 
   if (!project) {
     return (
-      <div className="dark min-h-screen bg-background text-foreground flex flex-col">
+      <div className="min-h-screen bg-background text-foreground flex flex-col">
         <Navbar />
         <main className="flex-1 flex items-center justify-center text-center px-6">
           <div>
@@ -167,10 +167,10 @@ export default function ProjectDetail() {
   }
 
   return (
-    <div className="dark min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Navbar />
 
-      {/* Hero */}
+      {/* Hero — photo bg, text always white over overlay */}
       <section className="relative h-[520px] overflow-hidden flex items-end">
         <div className="absolute inset-0 z-0">
           <img
@@ -216,9 +216,9 @@ export default function ProjectDetail() {
       </section>
 
       {/* Stats strip */}
-      <section className="border-b border-white/8 bg-zinc-950/80 backdrop-blur-sm">
+      <section className="border-b border-border/30 bg-muted/60 backdrop-blur-sm">
         <div className="container mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/8">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-border/30">
             {project.stats.map((stat, i) => (
               <motion.div
                 key={i}
@@ -228,8 +228,8 @@ export default function ProjectDetail() {
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 className="py-8 px-6 text-center"
               >
-                <p className="text-3xl md:text-4xl font-bold text-white">{stat.value}</p>
-                <p className="text-xs text-white/50 mt-1 font-light uppercase tracking-widest">{stat.label}</p>
+                <p className="text-3xl md:text-4xl font-bold text-foreground">{stat.value}</p>
+                <p className="text-xs text-muted-foreground mt-1 font-light uppercase tracking-widest">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -237,7 +237,7 @@ export default function ProjectDetail() {
       </section>
 
       {/* Summary + Body */}
-      <section className="py-20 bg-zinc-950/60">
+      <section className="py-20 bg-muted/40">
         <div className="container mx-auto px-6 md:px-12 max-w-3xl">
           <motion.div
             initial="hidden"
@@ -248,7 +248,7 @@ export default function ProjectDetail() {
           >
             <motion.p
               variants={fadeUp}
-              className="text-xl md:text-2xl text-white font-light leading-relaxed border-l-2 border-primary pl-6"
+              className="text-xl md:text-2xl text-foreground font-light leading-relaxed border-l-2 border-primary pl-6"
             >
               {project.summary}
             </motion.p>
@@ -269,7 +269,7 @@ export default function ProjectDetail() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-2xl font-bold text-white mb-8"
+            className="text-2xl font-bold text-foreground mb-8"
           >
             Project Gallery
           </motion.h2>
@@ -282,7 +282,7 @@ export default function ProjectDetail() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 onClick={() => setLightboxIndex(i)}
-                className={`group relative overflow-hidden rounded-2xl bg-zinc-900 ${i === 0 ? "md:col-span-2 aspect-video" : "aspect-square"}`}
+                className={`group relative overflow-hidden rounded-2xl bg-card ${i === 0 ? "md:col-span-2 aspect-video" : "aspect-square"}`}
               >
                 <img
                   src={src}
@@ -298,7 +298,7 @@ export default function ProjectDetail() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA — photo bg, text always white */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img src="/projects-hero.avif" alt="" className="w-full h-full object-cover object-bottom" />
@@ -337,7 +337,7 @@ export default function ProjectDetail() {
 
       <Footer />
 
-      {/* Lightbox */}
+      {/* Lightbox — always dark overlay */}
       <AnimatePresence>
         {lightboxIndex !== null && (
           <LightboxGallery

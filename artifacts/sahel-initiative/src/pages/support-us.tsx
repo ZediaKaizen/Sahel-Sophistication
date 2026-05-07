@@ -13,13 +13,13 @@ export default function SupportUs() {
   const [customAmount, setCustomAmount] = useState<string>("");
 
   return (
-    <div className="dark min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Navbar />
 
       <section className="relative pt-40 pb-32 z-20 bg-background">
         <div className="container mx-auto px-6 md:px-12">
           <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            <motion.div 
+            <motion.div
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
@@ -30,7 +30,7 @@ export default function SupportUs() {
               <motion.p variants={fadeUp} className="text-xl text-muted-foreground font-light leading-relaxed mb-8">
                 Your donation directly funds the drilling of boreholes in communities that have never had clean water. We operate with minimal overhead to ensure your impact is maximized.
               </motion.p>
-              
+
               <motion.div variants={fadeUp} className="space-y-6">
                 <div className="flex items-start gap-4">
                   <CheckCircle2 className="w-6 h-6 text-accent shrink-0 mt-1" />
@@ -49,7 +49,7 @@ export default function SupportUs() {
               </motion.div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -58,16 +58,16 @@ export default function SupportUs() {
                 <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-[80px] pointer-events-none" />
                 <CardContent className="p-0 relative z-10">
                   <h3 className="text-2xl font-bold mb-8">Choose Donation Amount</h3>
-                  
+
                   <div className="grid grid-cols-3 gap-3 mb-6">
                     {[25, 50, 100, 250, 500].map((amount) => (
                       <button
                         key={amount}
                         onClick={() => { setDonationAmount(amount); setCustomAmount(""); }}
                         className={`py-4 rounded-2xl font-medium transition-all duration-300 border ${
-                          donationAmount === amount 
-                            ? 'bg-primary text-primary-foreground border-primary shadow-[0_0_20px_rgba(53,192,237,0.2)]' 
-                            : 'bg-white/5 text-foreground border-white/10 hover:bg-white/10 hover:border-white/20'
+                          donationAmount === amount
+                            ? 'bg-primary text-primary-foreground border-primary shadow-[0_0_20px_rgba(53,192,237,0.2)]'
+                            : 'bg-muted text-foreground border-border hover:bg-muted/80 hover:border-border/80'
                         }`}
                       >
                         ${amount}
@@ -76,9 +76,9 @@ export default function SupportUs() {
                     <button
                       onClick={() => setDonationAmount(null)}
                       className={`py-4 rounded-2xl font-medium transition-all duration-300 border ${
-                        donationAmount === null 
-                          ? 'bg-primary/20 text-primary border-primary/50' 
-                          : 'bg-white/5 text-foreground border-white/10 hover:bg-white/10 hover:border-white/20'
+                        donationAmount === null
+                          ? 'bg-primary/20 text-primary border-primary/50'
+                          : 'bg-muted text-foreground border-border hover:bg-muted/80 hover:border-border/80'
                       }`}
                     >
                       Custom
@@ -95,12 +95,12 @@ export default function SupportUs() {
                       >
                         <div className="relative">
                           <span className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground font-medium">$</span>
-                          <Input 
-                            type="number" 
-                            placeholder="Amount" 
+                          <Input
+                            type="number"
+                            placeholder="Amount"
                             value={customAmount}
                             onChange={(e) => setCustomAmount(e.target.value)}
-                            className="pl-8 h-14 bg-white/5 border-white/10 text-lg rounded-2xl focus-visible:ring-primary"
+                            className="pl-8 h-14 bg-muted border-border text-lg rounded-2xl focus-visible:ring-primary"
                           />
                         </div>
                       </motion.div>
@@ -118,11 +118,11 @@ export default function SupportUs() {
                     </p>
                   </div>
 
-                  <Button className="w-full h-14 rounded-2xl text-lg font-bold bg-white text-black hover:bg-white/90 transition-all duration-300 group">
+                  <Button className="w-full h-14 rounded-2xl text-lg font-bold bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 group">
                     <Heart className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
                     Donate Now
                   </Button>
-                  
+
                   <p className="text-center text-muted-foreground text-xs mt-4">
                     Secure payment processed via Stripe.
                   </p>
