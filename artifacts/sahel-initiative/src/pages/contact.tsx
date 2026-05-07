@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Instagram, Linkedin } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -43,7 +44,21 @@ export default function Contact() {
               <div className="space-y-6 text-muted-foreground font-light">
                 <div>
                   <h4 className="text-foreground font-medium mb-1">Email</h4>
-                  <p>hello@thesahelinitiative.org</p>
+                  <a
+                    href="mailto:support@thesahelinitiative.org"
+                    className="hover:text-foreground transition-colors"
+                  >
+                    support@thesahelinitiative.org
+                  </a>
+                </div>
+                <div>
+                  <h4 className="text-foreground font-medium mb-1">Phone</h4>
+                  <a
+                    href="tel:+2348162267132"
+                    className="hover:text-foreground transition-colors"
+                  >
+                    +234 816 226 7132
+                  </a>
                 </div>
                 <div>
                   <h4 className="text-foreground font-medium mb-1">Location</h4>
@@ -51,7 +66,35 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-foreground font-medium mb-1">Volunteer Enquiries</h4>
-                  <p>volunteer@thesahelinitiative.org</p>
+                  <a
+                    href="mailto:volunteer@thesahelinitiative.org"
+                    className="hover:text-foreground transition-colors"
+                  >
+                    volunteer@thesahelinitiative.org
+                  </a>
+                </div>
+                <div>
+                  <h4 className="text-foreground font-medium mb-2">Follow Us</h4>
+                  <div className="flex items-center gap-3">
+                    <a
+                      href="https://www.instagram.com/thesahelinitiative/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram"
+                      className="w-10 h-10 rounded-full flex items-center justify-center bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                    >
+                      <Instagram className="w-4 h-4" />
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/company/the-sahel-initiative/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LinkedIn"
+                      className="w-10 h-10 rounded-full flex items-center justify-center bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                    >
+                      <Linkedin className="w-4 h-4" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </motion.div>
