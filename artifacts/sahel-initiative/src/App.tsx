@@ -13,6 +13,7 @@ import Team from "@/pages/team";
 import Blog from "@/pages/blog";
 import SupportUs from "@/pages/support-us";
 import Contact from "@/pages/contact";
+import PrivacyPolicy from "@/pages/privacy-policy";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ function Router() {
       <Route path="/blog" component={Blog} />
       <Route path="/support-us" component={SupportUs} />
       <Route path="/contact" component={Contact} />
+      <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -88,7 +88,12 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground/60 font-light">
-          <p>© {new Date().getFullYear()} The Sahel Initiative. All rights reserved.</p>
+          <div className="flex items-center gap-4">
+            <p>© {new Date().getFullYear()} The Sahel Initiative. All rights reserved.</p>
+            <Link href="/privacy-policy" className="hover:text-muted-foreground transition-colors">
+              Privacy Policy
+            </Link>
+          </div>
           <div className="flex items-center gap-4">
             <a
               href="https://www.instagram.com/thesahelinitiative/"
